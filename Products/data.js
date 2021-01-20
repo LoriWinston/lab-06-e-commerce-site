@@ -21,7 +21,7 @@ export const animals = [
     },
     {
         id: 3,
-        image: 'capybara.jpg'
+        image: 'capybara.jpg',
         species : 'rodent',
         furColor: 'honeysuckle',
         temperament: 'chill af',
@@ -31,7 +31,7 @@ export const animals = [
     },
     {
         id: 4,
-        image: 'tiger.jpg'
+        image: 'tiger.jpg',
         species : 'wildcat',
         furColor: 'orange',
         temperament: 'badass',
@@ -41,7 +41,7 @@ export const animals = [
     },
     {
         id: 5,
-        image: 'lion.jpg'
+        image: 'lion.jpg',
         species : 'wildcat',
         furColor: 'golden',
         temperament: 'wise',
@@ -51,7 +51,7 @@ export const animals = [
     },
     {
         id: 6,
-        image: 'unicorn.png'
+        image: 'unicorn.png',
         species : 'mythical',
         furColor: 'phosphorescent',
         temperament: 'aloof whimsy',
