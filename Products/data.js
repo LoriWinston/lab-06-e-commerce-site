@@ -51,7 +51,7 @@ export const animals = [
     },
     {
         id: 6,
-        image: 'unicorn.png',
+        image: 'unicorn.jpg',
         species : 'mythical',
         furColor: 'phosphorescent',
         temperament: 'aloof whimsy',

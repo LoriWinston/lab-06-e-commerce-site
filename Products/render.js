@@ -10,7 +10,7 @@ export function renderAnimal(animal){
 
     const img = document.createElement('img');
     img.classList.add('animal-image');
-    img.src = `../assets/${animal.name}.jpg`;
+    img.src = `../assets/${animal.image}`;
     li.append(img);
 
 
@@ -40,6 +40,7 @@ export function renderAnimal(animal){
     li.append(price);
 
     const button = document.createElement('button');
+    button.value = animal.id;
     button.textContent = 'Come home with me!';
     li.append(button);
 

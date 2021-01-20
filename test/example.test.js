@@ -8,7 +8,8 @@ const test = QUnit.test;
 test('time to test a function', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<li class="wild-animals"><h3 class="animal-name">Jim</h3><img class="animal-image" src="../assets/Jim.jpg"><p class="breed">Bear</p><p class="color">White</p><p class="mood">Judgemental</p><p class="size">hefty</p><p class="price">7000</p><button>Come home with me!</button></li>`;
+    /* eslint-disable */
+    const expected = `<li class=\"wild-animals\"><h3 class=\"animal-name\">Jim</h3><img class=\"animal-image\" src=\"../assets/panda.jpg\"><p class=\"breed\">Bear</p><p class=\"color\">White</p><p class=\"mood\">Judgemental</p><p class=\"size\">hefty</p><p class=\"price\">7000</p><button value=\"1\">Come home with me!</button></li>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
