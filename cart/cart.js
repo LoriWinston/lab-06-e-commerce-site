@@ -1,13 +1,13 @@
 import { cart } from './cart-data.js';
-import { animals } from '../Products/data';
+import { animals } from '../Products/data.js';
 
 import { renderTableRow, getAnimalTotal } from './render-table-row.js';
 import { findById } from '../utils.js';
-
+const table = document.querySelector('table');
 let total = 0;
 
 for (let item of cart) {
-    const animal = findById(item.id, animal);
+    const animal = findById(item.id, animals);
 
     const totalForThisAnimal = getAnimalTotal(item, animal);
 
@@ -28,3 +28,4 @@ td3.textContent = `Order Total: $${total}`;
 tr.append(td1, td2, td3);
 
 table.append(tr);
+
