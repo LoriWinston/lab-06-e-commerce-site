@@ -1,3 +1,5 @@
+import { addToCart } from '../cart/cart-utils.js';
+
 export function renderAnimal(animal){
     const li = document.createElement('li');
     li.classList.add('wild-animals');
@@ -40,11 +42,12 @@ export function renderAnimal(animal){
     li.append(price);
 
     const button = document.createElement('button');
+    button.addEventListener('click', () => {
+        addToCart(animal.id);
+    });
     button.value = animal.id;
     button.textContent = 'Come home with me!';
     li.append(button);
-
-
 
 
 

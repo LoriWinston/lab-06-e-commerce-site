@@ -1,4 +1,4 @@
-import { cart } from './cart-data';
+import { cart } from './cart-data.js';
 
 const CART = 'CART';
 const defaultEmptyCart = [];
