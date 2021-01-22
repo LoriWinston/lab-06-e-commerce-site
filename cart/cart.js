@@ -32,3 +32,10 @@ totalRow.append(orderTotalCell);
 table.append(totalRow);
 const orderTotal = calculateOrderTotal(cart, animals);
 orderTotalCell.textContent = `Total Cost $${orderTotal}`;
+
+const button = document.querySelector('button');
+
+button.addEventListener('click', () => {
+    const cart = getCart();
+    alert(JSON.stringify(cart, true, 2));
+});
