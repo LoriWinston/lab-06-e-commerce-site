@@ -2,7 +2,12 @@ h2 {
     background-color: blueviolet;
 }
 
-image {
+.animal-image {
     height: 300px;
     width: 300px;
+}
+
+ul {
+    background-color: red;
+    font-;
 }
