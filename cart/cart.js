@@ -5,14 +5,18 @@ import { renderTableRow } from './render-table-row.js';
 import { findById } from '../utils.js';
 // ^^ we need the findById function we created in utils
 import { calculateOrderTotal } from '../utils.js';
-import { getCart } from './cart-utils.js';
+import { clearCart, getCart } from './cart-utils.js';
+
+const button = document.querySelector('button');
 
 
 const table = document.getElementById('table');
 // we create a table
 
-
 const cart = getCart();
+if (cart.length === 0) {
+    button.disabled = true;
+}
 for (let cartItem of cart) {
     // this is a loop, we want the cartItem from the cart
     const matchingAnimal = findById(cartItem.id, animals);
@@ -33,9 +37,10 @@ table.append(totalRow);
 const orderTotal = calculateOrderTotal(cart, animals);
 orderTotalCell.textContent = `Total Cost $${orderTotal}`;
 
-const button = document.querySelector('button');
+
 
 button.addEventListener('click', () => {
-    const cart = getCart();
     alert(JSON.stringify(cart, true, 2));
+    clearCart();
+    window.location.href = '../';
 });
