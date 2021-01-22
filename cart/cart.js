@@ -5,7 +5,7 @@ import { renderTableRow } from './render-table-row.js';
 // ^^ we need to get the renderTableRow function
 import { findById } from '../utils.js';
 // ^^ we need the findById function we created in utils
-
+import { calculateOrderTotal } from '../utils.js';
 
 
 const table = document.getElementById('table');
@@ -23,3 +23,10 @@ for (let cartItem of cart) {
     //we want to put the row information into the table
 
 }
+
+const totalRow = document.createElement('tr');
+const orderTotalCell = document.createElement('td');
+totalRow.append(orderTotalCell);
+table.append(totalRow);
+const orderTotal = calculateOrderTotal(cart, animals);
+orderTotalCell.textContent = `Total Cost $${orderTotal}`;
