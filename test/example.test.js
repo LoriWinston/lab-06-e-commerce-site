@@ -5,6 +5,7 @@ import { cart } from '../cart/cart-data.js';
 import { renderAnimal } from '../Products/render.js';
 import { calculateLineTotal, calculateOrderTotal, findById } from '../utils.js';
 import { renderTableRow } from '../cart/render-table-row.js';
+import { setCart, getCart } from '../cart/cart-utils.js';
 
 const test = QUnit.test;
 
@@ -100,4 +101,27 @@ test('calculate order total', (expect) => {
     const actual = calculateOrderTotal(cart, animals)
 
     expect.equal(actual, expected);
+});
+
+test('it should get the cart from local storage', (expect) => {
+    const testCart = [
+        {
+            id: 3,
+            quantity: 2
+        },
+        {
+            id: 4,
+            quantity: 1
+        },
+    ];
+
+    const stringyCart = JSON.stringify(testCart);
+
+    const CART = 'CART';
+    localStorage.setItem(CART, stringyCart);
+
+    const cart = getCart();
+
+    expect.deepEqual(cart, testCart);
+
 });

@@ -1,4 +1,3 @@
-import { cart } from './cart-data.js';
 import { animals } from '../Products/data.js';
 // ^^we need to get the animals list from data.js
 import { renderTableRow } from './render-table-row.js';
@@ -6,11 +5,14 @@ import { renderTableRow } from './render-table-row.js';
 import { findById } from '../utils.js';
 // ^^ we need the findById function we created in utils
 import { calculateOrderTotal } from '../utils.js';
+import { getCart } from './cart-utils.js';
 
 
 const table = document.getElementById('table');
 // we create a table
 
+
+const cart = getCart();
 for (let cartItem of cart) {
     // this is a loop, we want the cartItem from the cart
     const matchingAnimal = findById(cartItem.id, animals);

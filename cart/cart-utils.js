@@ -5,7 +5,7 @@ const defaultEmptyCart = [];
 import { findById } from '../utils.js';
 
 
-function getCart() {
+export function getCart() {
     const stringyCart = localStorage.getItem(CART);
 
     if (stringyCart) {
