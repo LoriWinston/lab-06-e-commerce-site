@@ -1,9 +1,9 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 import { animals } from '../Products/data.js';
-
+import { cart } from '../cart/cart-data.js';
 import { renderAnimal } from '../Products/render.js';
-import { calculateLineTotal, findById } from '../utils.js';
+import { calculateLineTotal, calculateOrderTotal, findById } from '../utils.js';
 import { renderTableRow } from '../cart/render-table-row.js';
 
 const test = QUnit.test;
@@ -88,5 +88,16 @@ test('calculate line total', (expect) => {
 
     //Expect
     // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
+});
+
+
+
+test('calculate order total', (expect) => {
+
+    const expected = 89000
+
+    const actual = calculateOrderTotal(cart, animals)
+
     expect.equal(actual, expected);
 });

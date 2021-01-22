@@ -1,31 +1,25 @@
 import { cart } from './cart-data.js';
 import { animals } from '../Products/data.js';
-
-import { renderTableRow, getAnimalTotal } from './render-table-row.js';
+// ^^we need to get the animals list from data.js
+import { renderTableRow } from './render-table-row.js';
+// ^^ we need to get the renderTableRow function
 import { findById } from '../utils.js';
-const table = document.querySelector('table');
-let total = 0;
+// ^^ we need the findById function we created in utils
 
-for (let item of cart) {
-    const animal = findById(item.id, animals);
 
-    const totalForThisAnimal = getAnimalTotal(item, animal);
 
-    total = total + totalForThisAnimal;
-    const tableRowDOM = renderTableRow(item, animal);
+const table = document.getElementById('table');
+// we create a table
 
-    table.append(tableRowDOM);
+for (let cartItem of cart) {
+    // this is a loop, we want the cartItem from the cart
+    const matchingAnimal = findById(cartItem.id, animals);
+    //we want the findbyId to grab the cartItem's id from the animals list and give the matchingAnimal
+    console.log(matchingAnimal);
+    //console log to make sure it's giving the matchingAnimal
+    const row = renderTableRow(cartItem, matchingAnimal);
+    // we want to display the correct cartItem and matchingAnimal 
+    table.append(row);
+    //we want to put the row information into the table
 
 }
-
-const tr = document.createElement('tr');
-const td1 = document.createElement('td');
-const td2 = document.createElement('td');
-const td3 = document.createElement('td');
-
-td3.textContent = `Order Total: $${total}`;
-
-tr.append(td1, td2, td3);
-
-table.append(tr);
-
